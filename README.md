@@ -21,7 +21,7 @@ Financial Risk Management; Technology in Treasury; Financial Accounting and Repo
 
 ## Author Statement
 
-This series was developed by Edgar Garzaro, a former commercial banking professional whose
+This series was developed by Ed Garzaro, a former commercial banking professional whose
 direct experience in treasury and cash management operations forms the practical foundation
 for every analytical conclusion presented here.
 
