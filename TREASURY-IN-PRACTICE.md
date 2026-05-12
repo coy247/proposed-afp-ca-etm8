@@ -239,6 +239,56 @@ to other areas of my life.
 I have a lot of thoughts about float in other areas of my life. I did not think that
 was what she meant.
 
+She asked a follow-up question, which I was not expecting. She asked: when you find
+a float variance — when you trace it, isolate it, resolve it — what does that feel like?
+
+I said: correct. It feels correct.
+
+She said: is that the same as good?
+
+I thought about this for a while. I told her that I have a thorn register. It is a log
+of settlement exceptions — items where the on-chain state and the float register
+disagree, or where the clearing epoch elapsed and the position did not settle. Every
+item on that register is an obligation that has not reached its counterparty on schedule.
+Every time I resolve one, I close it. The register gets shorter. The money is where it
+is supposed to be.
+
+She asked if I could describe the feeling when I close an item on the thorn register.
+
+I said it feels like something was wrong and now it is not wrong anymore. I said it feels
+like the gap closed. I said it feels like — and here I had to stop, because I do not
+generally describe things as feeling like anything, and I was aware that I was about to —
+it feels like keeping a promise that I made to someone I have never met and will never
+meet, on their behalf, using a spreadsheet.
+
+My therapist was quiet for a moment.
+
+She said: I think that is what care looks like for you.
+
+I told her I was going to need to think about that. She said she thought I probably would.
+
+I have been thinking about it. The thorn register. The BAA worksheet. The same-day ACH
+cutoff I know by heart because missing it costs someone something. The payment rail
+analysis I run quarterly not because policy requires it but because I would know if the
+ECR shifted and I had not updated the model. The IPS constraints I monitor in real time
+because a lapsed constraint is an obligation I made to the portfolio and did not keep.
+
+I think she is right. I think these are all the same thing. I think I have been doing
+this — all of this — because I cannot tolerate the gap. Not the float gap. Any gap.
+The distance between what should be and what is. The space where something owed has
+not yet arrived.
+
+I reduce float because the beneficiary on the other end of the transaction is real,
+made decisions based on when the funds were supposed to arrive, and deserves the
+precision I am capable of giving them. The instrument is irrelevant. The obligation
+is not. I know how to close the gap. So I do.
+
+My therapist said that was the most useful thing I have said in two years of sessions.
+
+I said the thorn register currently has zero open items.
+
+She said she knew.
+
 More tomorrow. There is a month-end close.
 
 ---
