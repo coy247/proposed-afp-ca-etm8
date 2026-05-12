@@ -65,10 +65,10 @@ The following table defines clearing epoch derivation rules by protocol class. T
 The **governor ceiling** constrains the maximum permissible clearing epoch for CTP-eligible instruments. It is defined as:
 
 ```
-governor_ceiling = clearingMs × (9109 / 9919)
+governor_ceiling = clearingMs × 0.90
 ```
 
-The ratio 9109/9919 is derived from the booLang float governor specification and represents the maximum permissible efficiency margin before a position is classified as stale. Instruments whose observed settlement duration exceeds the governor ceiling require immediate Z-state review and sub-float reclassification.
+The 10% margin represents the minimum buffer required for TMS detection and operational response — specifically, the time needed to detect an approaching Z=0 transition within the ≤90-second loop interval (C014 Section 5.1) and initiate remediation before the clearing epoch fully elapses. Instruments whose observed settlement duration exceeds the governor ceiling require immediate Z-state review and sub-float reclassification.
 
 ---
 
@@ -132,7 +132,7 @@ A position is reclassified to **Z=0** when any of the following occurs:
 
 Every Z-state transition must be recorded in the float register snapshot with:
 
-- The BLID transaction ID (C001 vocabulary bridge: SoD audit record → BLID (booLangID_v2) transaction ID) of the causative on-chain transaction
+- The BLID transaction ID (C001 vocabulary bridge: SoD audit record → BLID transaction ID) of the causative on-chain transaction
 - The block timestamp at transition (not system timestamp — see C013 Section 3.2)
 - The new Z value (0 or 1)
 - The corrected_friction_ms (C001 vocabulary bridge: float period → corrected_friction_ms / clearing epoch) representing accumulated stale time
@@ -261,14 +261,9 @@ Portfolio tier is computed at each BLID anchor cycle and recorded in the float r
 
 ---
 
-## Standard Reference and Submission Information
+## Source Reference
 
 > *Essentials of Treasury Management, 8th Edition (ETM8).*
 > Association for Financial Professionals (AFP). Rockville, MD, 2025.
 > © 2025 Association for Financial Professionals. All rights reserved.
 > All proprietary rights to the examination, including copyright, are held by AFP.
-
-Association for Financial Professionals
-12345 Parklawn Drive, Suite 200, PMB 1001
-Rockville, MD 20852
-certification@AFPonline.org · +1 301.907.2862

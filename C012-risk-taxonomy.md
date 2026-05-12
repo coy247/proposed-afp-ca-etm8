@@ -38,7 +38,7 @@ Protocol risk arises from conditions internal to the protocol layer and is not d
 
 ### 2.2 Sub-Categories
 
-**Validator concentration risk**: A small number of validators control a disproportionate share of block production or consensus, creating a single point of failure or censorship risk *(C001 D6 — Validator Concentration Risk)*. For proof-of-stake and delegated proof-of-stake protocols, validator concentration is measured by the Nakamoto coefficient (minimum number of validators required to compromise the network). A Nakamoto coefficient below 10 is a R1 flag for treasury purposes.
+**Validator concentration risk**: A small number of validators control a disproportionate share of block production or consensus, creating a single point of failure or censorship risk *(C001 D6 — Validator Concentration Risk)*. For proof-of-stake and delegated proof-of-stake protocols, validator concentration is measured by the Nakamoto coefficient (minimum number of validators required to compromise the network). A Nakamoto coefficient below 10 is proposed as an R1 flag for treasury purposes; this threshold is not derived from ETM8 (the instrument class did not exist when ETM8 was written) and may be adjusted by treasury policy based on the specific protocol's consensus architecture.
 
 **Network stall risk**: The consensus protocol halts or produces no blocks for a period exceeding the nominal clearing epoch (C001 vocabulary bridge: clearing window → clearing epoch, protocol-defined). Network stalls increment the antinodeIndex and, at antinodeIndex ≥ 13, trigger HARD_HALT per C008 Section 5.
 
@@ -185,16 +185,19 @@ Market risk is the risk of loss due to adverse price movements in digital assets
 
 ### 7.2 Conservative Valuation Standards
 
-For risk assessment and scenario analysis purposes, the following conservative valuation floors are established:
+For risk assessment and scenario analysis purposes, conservative valuation floors must be established per asset class and reviewed quarterly. The methodology for computing floors is mandatory; specific values are updated by the treasury team based on current market data and must not be treated as static constants embedded in policy.
 
-| Asset | Conservative Floor |
+**Floor computation methodology**:
+
+| Asset Class | Methodology |
 |---|---|
-| BTC | USD 95,000 |
-| XMR | USD 165 |
-| Regulated stablecoins (USDC, USDT) | USD 1.00 (peg integrity assumed; monitor for peg break) |
-| Tokenized T-bills (OUSG, BUIDL) | NAV × 0.99 (1% haircut for secondary market liquidity) |
+| Volatile digital assets (BTC, XMR, ETH, SOL, etc.) | Lower of: (a) 30-day trailing minimum price on a primary exchange, and (b) 40% peak-to-trough drawdown applied to the most recent 12-month closing price |
+| Regulated stablecoins (USDC, USDT) | USD 1.00 (par), subject to immediate peg break escalation per Section 7.3 if deviation exceeds 0.50% |
+| Tokenized T-bills | Current NAV less a 1% secondary market liquidity haircut |
 
-These floors are not predictions — they are the minimum values to use in stress scenarios when computing portfolio risk exposure. A treasury that is solvent at these floors is demonstrating adequate capital conservation.
+These floors are minimum scenario values for stress testing — not price predictions and not GAAP fair values (see C013 Section 2.1 for the distinction). A treasury that is solvent at these floors is demonstrating adequate capital conservation under stress.
+
+**Update requirement**: Conservative floor values must be updated quarterly, or within 5 business days of any adverse price movement exceeding 20% on a relevant asset. Stale floors that no longer reflect current conditions are a C012 R6 governance failure.
 
 **Conservative valuations are mandatory for**: CECR computation when positions are marked to market, Baumol floor computation, and any scenario analysis submitted under C012 or C011.
 
@@ -272,14 +275,9 @@ R7 is monitored at each TMS loop cycle. Persistent deployment gate failure (thre
 
 ---
 
-## Standard Reference and Submission Information
+## Source Reference
 
 > *Essentials of Treasury Management, 8th Edition (ETM8).*
 > Association for Financial Professionals (AFP). Rockville, MD, 2025.
 > © 2025 Association for Financial Professionals. All rights reserved.
 > All proprietary rights to the examination, including copyright, are held by AFP.
-
-Association for Financial Professionals
-12345 Parklawn Drive, Suite 200, PMB 1001
-Rockville, MD 20852
-certification@AFPonline.org · +1 301.907.2862

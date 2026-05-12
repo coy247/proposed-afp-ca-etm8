@@ -126,7 +126,7 @@ The capital stack waterfall assigns all deployable capital (above the Baumol flo
 
 **Eligible instruments**:
 
-1. **Tokenized T-bills** — specifically OUSG (Ondo Finance) and BUIDL (BlackRock), or equivalent regulated tokenized treasury instruments *(C001 vocabulary bridge: money market fund → tokenized T-bill (OUSG, BUIDL))* *(C001 D5 — Smart Contract Counterparty)*. These instruments represent on-chain exposure to U.S. Treasury securities and carry the credit quality of their underlying assets. Redemption periods must be confirmed against the instrument's current prospectus or contract terms.
+1. **Tokenized T-bills** — regulated tokenized U.S. Treasury instruments from qualified issuers *(C001 vocabulary bridge: money market fund → tokenized T-bill)* *(C001 D5 — Smart Contract Counterparty)*. These instruments represent on-chain exposure to U.S. Treasury securities and carry the credit quality of their underlying assets. Redemption periods must be confirmed against the instrument's current prospectus or contract terms. (Examples at time of writing include OUSG from Ondo Finance and BUIDL from BlackRock; practitioners should verify current issuer regulatory status and available instruments rather than treating any specific product as pre-approved.)
 
    - CECR treatment: tokenized T-bill positions use the `contract` protocol class clearing epoch equal to the published redemption notice period
    - Smart contract counterparty assessment required: confirm audit status and upgrade risk of the governing smart contract
@@ -225,14 +225,9 @@ The following deployment patterns are categorically prohibited in CTP-eligible d
 
 ---
 
-## Standard Reference and Submission Information
+## Source Reference
 
 > *Essentials of Treasury Management, 8th Edition (ETM8).*
 > Association for Financial Professionals (AFP). Rockville, MD, 2025.
 > © 2025 Association for Financial Professionals. All rights reserved.
 > All proprietary rights to the examination, including copyright, are held by AFP.
-
-Association for Financial Professionals
-12345 Parklawn Drive, Suite 200, PMB 1001
-Rockville, MD 20852
-certification@AFPonline.org · +1 301.907.2862

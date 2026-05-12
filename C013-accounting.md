@@ -166,7 +166,7 @@ Each on-chain transaction in the audit trail must be classified with one of the 
 
 ### 4.3 Yield and Conversion — Detailed Treatment
 
-**Yield earned** (purpose code `YIELD_RECEIPT`): Under ASC 350-60, yield income received from a protocol staking / yield instrument (C001 vocabulary bridge: interest-bearing deposit → protocol staking / yield instrument) is recognized at the block timestamp when the inbound on-chain transaction achieves pool confirmation per C010 Bill of Rights III. Early recognition (before pool confirmation) creates speculative_collection_float and is prohibited.
+**Yield earned** (purpose code `YIELD_RECEIPT`): Under ASC 350-60, yield income received from a protocol staking / yield instrument (C001 vocabulary bridge: interest-bearing deposit → protocol staking / yield instrument) is recognized at the block timestamp when the inbound on-chain transaction achieves pool confirmation per C010 Section 5 (On-Chain Collection Recognition Rule). Early recognition (before pool confirmation) creates speculative_collection_float and is prohibited.
 
 **Conversion transactions** (purpose code `CONVERSION`): When digital assets are exchanged — for example, converting BTC to USDC — the disposition of the outbound asset must be recognized at fair value (ASC 350-60), with any difference between book value and fair value recognized in net income. The inbound asset is recorded at its fair value at the block timestamp of confirmation.
 
@@ -220,14 +220,9 @@ The float register snapshot (C001 vocabulary bridge: bank statement → float re
 
 ---
 
-## Standard Reference and Submission Information
+## Source Reference
 
 > *Essentials of Treasury Management, 8th Edition (ETM8).*
 > Association for Financial Professionals (AFP). Rockville, MD, 2025.
 > © 2025 Association for Financial Professionals. All rights reserved.
 > All proprietary rights to the examination, including copyright, are held by AFP.
-
-Association for Financial Professionals
-12345 Parklawn Drive, Suite 200, PMB 1001
-Rockville, MD 20852
-certification@AFPonline.org · +1 301.907.2862

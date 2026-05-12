@@ -246,7 +246,7 @@ The `/api/float` interface must enforce:
 
 The TMS loop interval — the cadence at which the system executes all mandatory monitoring, CECR computation, Z-state evaluation, deployment gate check, and Hermes event generation — is **≤90 seconds**.
 
-This limit is derived from the M2 prerequisite for portfolio tier qualification: to qualify for R ≥ 0.40 (a reserve adequacy metric used in the broader booLang framework), the TMS must complete at least one full monitoring cycle within 90 seconds of any protocol state change.
+This limit is derived from the operational requirement to detect Z-state transitions on the shortest CTP-eligible clearing epochs within a single clearing epoch window. XRPL ledger closes at 3,000–5,000 ms and Stellar at 5,000 ms; a 90-second full-cycle interval, combined with the protocol-specific override poll intervals in Section 5.2, ensures that the TMS can detect and escalate HARD_HALT conditions (C008 Section 5.1) before a second clearing epoch elapses on any CTP-eligible rail.
 
 A TMS operating on a loop interval longer than 90 seconds cannot reliably detect Z-state transitions for short-clearing-epoch protocols (notably Stellar at ~5,000 ms and XRPL at ~3,000–5,000 ms clearing epochs) within a single clearing epoch, which would produce systematically overstated CECR values.
 
@@ -317,14 +317,9 @@ Existing treasury operations using a traditional TMS (not designed for digital a
 
 ---
 
-## Standard Reference and Submission Information
+## Source Reference
 
 > *Essentials of Treasury Management, 8th Edition (ETM8).*
 > Association for Financial Professionals (AFP). Rockville, MD, 2025.
 > © 2025 Association for Financial Professionals. All rights reserved.
 > All proprietary rights to the examination, including copyright, are held by AFP.
-
-Association for Financial Professionals
-12345 Parklawn Drive, Suite 200, PMB 1001
-Rockville, MD 20852
-certification@AFPonline.org · +1 301.907.2862

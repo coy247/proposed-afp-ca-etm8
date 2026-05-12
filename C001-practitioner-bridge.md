@@ -60,7 +60,7 @@ These terms carry the same functional meaning. The right column is the digital e
 | Settlement finality | Confirmation depth (n-block probabilistic) | Probabilistic, not bilateral; protocol-specific window |
 | Float period | corrected_friction_ms / clearing epoch | Measured in milliseconds; protocol-anchored, not calendar |
 | Reconciliation | BLID chain / thorn anchor issuance | Cryptographic anchor replaces wire trace number |
-| SoD audit record | BLID (booLangID_v2) transaction ID | Tamper-evident; hash-chained, not paper-based |
+| SoD audit record | BLID transaction ID (content-addressed, cryptographic) | Tamper-evident; hash-chained, not paper-based |
 | Bank statement | Float register snapshot | Machine-generated; native-precision; block-timestamped |
 
 ---

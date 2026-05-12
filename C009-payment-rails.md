@@ -250,20 +250,15 @@ All smart contract counterparty positions must carry the flag "code-as-counterpa
 - **C008** (Float Management): clearingMs values for this document's rail table feed directly into C008 protocol class clearing epoch derivations
 - **C010** (Custody Architecture): Pre-broadcast authorization gate (Section 4.2) depends on C010 SoD controls for dual-control sign-off and key custody segregation
 - **C011** (Yield Policy): Payment rail selection order (Section 5) applies to capital deployment transactions; Baumol floor check (Section 4.2, gate component 2) links to C011 Section 2
-- **C012** (Risk Taxonomy): EVM gas exposure (Section 6) feeds R3 (Protocol-Layer Risk); smart contract counterparty (Section 7) feeds R3 (Smart Contract / Bridge Risk)
+- **C012** (Risk Taxonomy): EVM gas exposure (Section 6) feeds R1 (Protocol Risk); smart contract counterparty (Section 7) feeds R3 (Smart Contract / Bridge Risk)
 - **C013** (Accounting): EVM gas exposure flag and selection rationale fields are minimum audit trail requirements per C013 Section 3
 - **C014** (TMS Integration): TMS must implement pre-broadcast authorization gate enforcement and EVM gas exposure flag automation
 
 ---
 
-## Standard Reference and Submission Information
+## Source Reference
 
 > *Essentials of Treasury Management, 8th Edition (ETM8).*
 > Association for Financial Professionals (AFP). Rockville, MD, 2025.
 > © 2025 Association for Financial Professionals. All rights reserved.
 > All proprietary rights to the examination, including copyright, are held by AFP.
-
-Association for Financial Professionals
-12345 Parklawn Drive, Suite 200, PMB 1001
-Rockville, MD 20852
-certification@AFPonline.org · +1 301.907.2862

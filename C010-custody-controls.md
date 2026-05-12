@@ -132,7 +132,7 @@ The treasury policy (ETM8 Chapter 18 analog) must document:
 
 ### 4.1 Definition and Function
 
-The **BLID chain** (C001 vocabulary bridge: reconciliation → BLID chain / thorn anchor) is the authoritative, tamper-evident audit trail for all digital asset treasury SoD events, replacing the paper SoD log. Each entry in the BLID chain is a **BLID transaction ID** (C001 vocabulary bridge: SoD audit record → BLID (booLangID_v2) transaction ID) — a hash-chained record that cannot be modified without invalidating all subsequent entries.
+The **BLID chain** (C001 vocabulary bridge: reconciliation → BLID chain / thorn anchor) is the authoritative, tamper-evident audit trail for all digital asset treasury SoD events, replacing the paper SoD log. Each entry in the BLID chain is a **BLID transaction ID** (C001 vocabulary bridge: SoD audit record → BLID transaction ID) — a hash-chained record that cannot be modified without invalidating all subsequent entries.
 
 The BLID chain records:
 
@@ -165,11 +165,11 @@ The BLID chain must satisfy:
 
 ---
 
-## 5. Bill of Rights III — Recognition at Pool Confirmation
+## 5. On-Chain Collection Recognition Rule — Recognition at Pool Confirmation
 
 ### 5.1 Statement of the Rule
 
-**Bill of Rights III**: Recognition of a digital asset receipt (collection) occurs at **pool confirmation** (the point at which an on-chain transaction reaches the required confirmation depth for the governing protocol class), not at submission (broadcast).
+**On-Chain Collection Recognition Rule**: Recognition of a digital asset receipt (collection) occurs at **pool confirmation** (the point at which an on-chain transaction reaches the required confirmation depth for the governing protocol class), not at submission (broadcast).
 
 This rule has three corollaries:
 
@@ -179,7 +179,7 @@ This rule has three corollaries:
 
 ### 5.2 Rationale
 
-ETM8 Chapter 3 treatment of bank account (custodial wallet) balances includes the concept of ledger balance versus collected balance — the difference being uncollected items. Bill of Rights III formalizes the analog for digital asset treasury: a broadcast-but-unconfirmed on-chain transaction is not a collected item and must not be treated as available balance.
+ETM8 Chapter 3 treatment of bank account (custodial wallet) balances includes the concept of ledger balance versus collected balance — the difference being uncollected items. This standard formalizes the analog for digital asset treasury: a broadcast-but-unconfirmed on-chain transaction is not a collected item and must not be treated as available balance.
 
 ### 5.3 Recognition Failure Remediation
 
@@ -232,14 +232,9 @@ ETM8 Chapter 3 addresses bank concentration risk — the risk of overreliance on
 
 ---
 
-## Standard Reference and Submission Information
+## Source Reference
 
 > *Essentials of Treasury Management, 8th Edition (ETM8).*
 > Association for Financial Professionals (AFP). Rockville, MD, 2025.
 > © 2025 Association for Financial Professionals. All rights reserved.
 > All proprietary rights to the examination, including copyright, are held by AFP.
-
-Association for Financial Professionals
-12345 Parklawn Drive, Suite 200, PMB 1001
-Rockville, MD 20852
-certification@AFPonline.org · +1 301.907.2862
