@@ -39,7 +39,7 @@ FASB ASC 350-60 was issued in December 2023 and became effective for fiscal year
 
 1. **Measurement basis**: Digital assets within the scope of ASC 350-60 are measured at **fair value** at each reporting date, with changes in fair value recognized in net income for the period.
 
-2. **Scope**: ASC 350-60 applies to digital assets that meet all of the following: (a) the asset is an intangible asset, (b) the asset is created or reside on a distributed ledger, and (c) the asset is secured through cryptography. Tokenized T-bills (C001 vocabulary bridge: money market fund → tokenized T-bill) and protocol staking positions (C001 vocabulary bridge: interest-bearing deposit → protocol staking / yield instrument) may fall under ASC 350-60 or under specific financial instrument standards depending on their legal structure; practitioners must obtain legal and accounting counsel on the classification of each instrument.
+2. **Scope**: ASC 350-60 applies to digital assets that meet all of the following: (a) the asset is an intangible asset, (b) the asset is created or transferred on a distributed ledger, and (c) the asset is secured through cryptography. Tokenized T-bills (C001 vocabulary bridge: money market fund → tokenized T-bill) and protocol staking positions (C001 vocabulary bridge: interest-bearing deposit → protocol staking / yield instrument) may fall under ASC 350-60 or under specific financial instrument standards depending on their legal structure; practitioners must obtain legal and accounting counsel on the classification of each instrument.
 
 3. **Level of fair value hierarchy**: Digital assets traded on active markets typically qualify as Level 1 (quoted prices in active markets). Less liquid digital assets may require Level 2 or Level 3 measurement. CTP conservative valuation floors (C012 Section 7.2) are not GAAP fair values — they are internal risk management floors and must not be substituted for GAAP fair value in financial statements.
 
@@ -111,7 +111,7 @@ Digital assets are divisible to extremely small units that have economic signifi
 | Stellar (XLM) | Stroop | 7 decimal places |
 | USDC (all chains) | Micro-USDC | 6 decimal places |
 
-The minimum precision standard for C013 purposes is **≥15 decimal places** for satoshi/piconero precision, ensuring that BTC and XMR audit trails can represent values without rounding error at any reasonable treasury scale.
+The minimum precision for each asset class is the native unit precision shown in the table above. For assets not listed, use the protocol's published smallest-unit decimal precision. The audit trail must accommodate the full precision of any instrument in the portfolio — a storage schema that truncates ETH at fewer than 18 decimal places, for example, is noncompliant regardless of the current portfolio composition.
 
 **Implementation requirements**:
 
@@ -213,7 +213,7 @@ The float register snapshot (C001 vocabulary bridge: bank statement → float re
 
 - **C008** (Float Management): Block timestamps (Requirement 2) are the authoritative anchor for CECR epoch computations; corrected_friction_ms uses block timestamp differentials
 - **C009** (Payment Rails): Transaction hash (Requirement 1) is required on all pre-broadcast gate records; EVM gas exposure flag appears as a protocol fee cost entry with the CTP-ineligible notation
-- **C010** (Custody Architecture): Bill of Rights III (C010 Section 5) governs the recognition timing enforced by Requirement 2; BLID transaction ID is the primary GL reference key
+- **C010** (Custody Architecture): On-Chain Collection Recognition Rule (C010 Section 5) governs the recognition timing enforced by Requirement 2; BLID transaction ID is the primary GL reference key
 - **C011** (Yield Policy): Purpose classification schema (Section 4) must be complete before any C011 instruments are deployed; HALT Float Reserve quantifies the C011 opportunity cost obligation
 - **C012** (Risk Taxonomy): HALT Float Reserve is the GL expression of C012 R1 opportunity cost; float shield categories map to specific GL adjustment accounts
 - **C014** (TMS Integration): TMS must automate all four audit trail requirements; block timestamp retrieval must occur within the TMS loop cycle, not on a deferred batch basis

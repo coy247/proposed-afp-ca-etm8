@@ -267,7 +267,7 @@ R7 is monitored at each TMS loop cycle. Persistent deployment gate failure (thre
 ## 10. Integration with Other C-Series Addenda
 
 - **C008** (Float Management): All sub-float categories in this taxonomy originate in or feed back to C008 CECR computation; HARD_HALT is the operational expression of R1 at threshold
-- **C009** (Payment Rails): R3 assessment requirements apply to every smart contract counterparty in rail assessments; EVM gas exposure is a standing R3 flag for any EVM-rail position
+- **C009** (Payment Rails): R3 assessment requirements apply to every smart contract counterparty in rail assessments; EVM gas exposure is a standing R1 (Protocol Risk) flag for any EVM-rail position
 - **C010** (Custody Architecture): R4 and R5 monitoring depend on C010 thorn anchor and BLID chain infrastructure; SoD failures (coupling_float) are the R3/R4 bridge
 - **C011** (Yield Policy): Deployment gate failure triggers R7; validator concentration (D6) in 90-day bucket feeds R1 and R6 inputs
 - **C013** (Accounting): GL accounts for each float shield category per C013 Section 4; HALT float reserve quantifies R1 opportunity cost

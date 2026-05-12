@@ -54,7 +54,7 @@ The TMS must implement the protocol class table from C008 Section 2.2 and derive
 
 - Protocol class must be assigned to each custodial wallet at setup, not at transaction time
 - clearingMs derivation must use the published protocol parameters for the nominal clearing epoch; for protocols with variable block times (e.g., `pow`), use the published target block time
-- The governor ceiling (C008 Section 2.3) must be computed from clearingMs and stored as a derived parameter: `governor_ceiling = clearingMs × (9109 / 9919)`
+- The governor ceiling (C008 Section 2.3) must be computed from clearingMs and stored as a derived parameter: `governor_ceiling = clearingMs × 0.90`
 - Z-state assignment (Z=1 or Z=0) must be derived from the elapsed time since broadcast versus clearingMs, updated at each loop cycle
 
 **Acceptance test**: Given a transaction broadcast timestamp and protocol class, system computes the correct Z-state at any subsequent loop cycle, including the Z=0 transition at clearingMs elapsed.
@@ -93,7 +93,7 @@ The TMS audit trail must satisfy all four C013 minimum requirements (C013 Sectio
 
 ### 2.5 Requirement 5 — BLID Chain Issuance on Each Healthy Anchor Cycle
 
-The TMS must issue a BLID transaction ID (C001 vocabulary bridge: SoD audit record → BLID (booLangID_v2) transaction ID) at each anchor cycle where all of the following conditions are met: (a) the float register snapshot balance matches the on-chain confirmed balance, (b) no stale_canonical_float exists on the anchored channel, and (c) the CECR on the anchored channel is ≥ 0.60.
+The TMS must issue a BLID transaction ID (C001 vocabulary bridge: SoD audit record → BLID transaction ID) at each anchor cycle where all of the following conditions are met: (a) the float register snapshot balance matches the on-chain confirmed balance, (b) no stale_canonical_float exists on the anchored channel, and (c) the CECR on the anchored channel is ≥ 0.60.
 
 **Specification**:
 

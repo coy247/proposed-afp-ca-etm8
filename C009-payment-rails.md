@@ -72,7 +72,6 @@ Unlike bank settlement finality, which is legally defined at a specific moment, 
 | Protocol Class | Minimum Confirmation Depth | Approximate Time at Minimum |
 |---|---|---|
 | `pow` — BTC | 6 blocks | ~60 minutes |
-| `pow` — XMR | 10 blocks | ~20 minutes |
 | `pos` — ETH | 1 finalized epoch (2 epochs ≈ 12.8 min) | ~13 minutes |
 | `poh` — SOL | 32 slots (optimistic) | ~13 seconds |
 | `dpos` | 2/3 supermajority round | Protocol-dependent |
@@ -104,7 +103,7 @@ The following rails meet all five assessment dimensions for CTP-eligible operati
 
 ### 3.1 XRPL (XRP Ledger)
 
-- **Protocol class**: `stablecoin` (for USDC/USDT issued on XRPL) or native `pos`-equivalent
+- **Protocol class**: `stablecoin` — applies to both USDC/USDT issued on XRPL and native XRP transactions. XRPL uses Federated Byzantine Agreement (FBA) with a published Unique Node List (UNL), not proof-of-stake. FBA/UNL produces ledger-close-equivalent finality consistent with the `stablecoin` protocol class derivation rule in C008 Section 2.2.
 - **Fee model**: Fixed minimum — **10 drops** (0.00001 XRP). Deterministic at instruction time.
 - **Confirmation depth**: 1 ledger close, approximately 3,000–5,000 ms clearing epoch
 - **Reversibility profile**: Irreversible at ledger close; pre-broadcast gate required *(D1)*

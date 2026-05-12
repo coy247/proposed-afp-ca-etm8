@@ -47,7 +47,7 @@ The following table defines clearing epoch derivation rules by protocol class. T
 
 | Protocol Class | Representative Instruments | clearingMs Derivation Rule | Notes |
 |---|---|---|---|
-| `pow` (Proof of Work) | BTC (600,000 ms), XMR (120,000 ms) | target_block_time_ms × 1 | Probabilistic; confirmation depth applies (C001 D1 — Transaction Irreversibility) |
+| `pow` (Proof of Work) | BTC (600,000 ms) | target_block_time_ms × 1 | Probabilistic; confirmation depth applies (C001 D1 — Transaction Irreversibility). Privacy-enhanced PoW assets: see BSA/AML compliance note below. |
 | `pos` (Proof of Stake) | ETH post-merge, ADA | slot_time_ms × finality_slots | Finality slots are protocol-defined; use conservative published value |
 | `poh` (Proof of History) | SOL | slot_time_ms × confirmation_slots | ~400 ms slot; use 400 × 32 = 12,800 ms for optimistic finality |
 | `dpos` (Delegated Proof of Stake) | HIVE, EOS | round_time_ms × 2/3_supermajority | Validator concentration risk applies (C001 D6 — Validator Concentration Risk) |
@@ -59,6 +59,8 @@ The following table defines clearing epoch derivation rules by protocol class. T
 | `cbdc` | Wholesale CBDC pilots | operator_published_ms | Use operator SLA; treat as clearing window analog |
 
 **Application rule**: When a treasury position spans multiple protocol classes (e.g., a custodial wallet holding both BTC and a tokenized T-bill (C001 vocabulary bridge: money market fund → tokenized T-bill)), compute CECR separately per instrument class. Do not blend clearing epochs across protocol classes.
+
+**BSA/AML compliance note — privacy-enhanced assets**: Digital assets with protocol-level privacy features (e.g., ring signatures, stealth addresses, zero-knowledge transaction shielding) that defeat on-chain transaction tracing are presumptively ineligible for CTP-certified operations in entities subject to the Bank Secrecy Act (31 U.S.C. § 5311 et seq.) and FinCEN reporting requirements. Such assets create heightened AML/CFT compliance exposure and have been restricted or delisted by regulated custodians and exchanges across multiple jurisdictions specifically on that basis. Before deploying any privacy-enhanced asset in a corporate treasury, the practitioner must obtain independent BSA/AML legal analysis confirming eligibility under the applicable regulatory framework. This series does not include privacy-enhanced assets as protocol class exemplars.
 
 ### 2.3 Governor Ceiling
 

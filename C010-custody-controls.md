@@ -30,7 +30,7 @@ This document defines:
 - The extension of SoD principles to include the cryptographic dimension of key custody
 - Float shield categories that arise from SoD failures specific to digital asset custody
 - The BLID chain as the authoritative SoD audit trail, replacing paper-based SoD logs
-- Recognition rules under the Bill of Rights III standard
+- The On-Chain Collection Recognition Rule (Section 5): recognition of digital asset receipts occurs at pool confirmation, not at broadcast
 
 ---
 

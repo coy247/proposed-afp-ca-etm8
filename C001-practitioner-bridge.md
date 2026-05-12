@@ -62,6 +62,7 @@ These terms carry the same functional meaning. The right column is the digital e
 | Reconciliation | BLID chain / thorn anchor issuance | Cryptographic anchor replaces wire trace number |
 | SoD audit record | BLID transaction ID (content-addressed, cryptographic) | Tamper-evident; hash-chained, not paper-based |
 | Bank statement | Float register snapshot | Machine-generated; native-precision; block-timestamped |
+| Bank account reconciliation (confirmed) | Thorn anchor | Block-height-anchored BLID chain entry confirming float register matches on-chain balance; equivalent to a closed bank reconciliation with cryptographic proof |
 
 ---
 
@@ -97,13 +98,19 @@ These concepts have no direct ETM8 equivalent. Each is explained in terms the TM
 
 **TM frame:** In traditional treasury, counterparty agreements are legal contracts enforceable by courts. Smart contracts execute code automatically with no judicial override.
 
-**Treasury impact:** Yield instruments that use smart contracts (liquidity pools, staking protocols) carry a software counterparty risk that has no ETM8 equivalent. C012 R2 covers this as Smart Contract Risk. Due diligence criteria are defined in C012; overcollateralized lending and regulated stablecoin yield are the lowest-risk options for the immediate bucket.
+**Treasury impact:** Yield instruments that use smart contracts (liquidity pools, staking protocols) carry a software counterparty risk that has no ETM8 equivalent. C012 R3 covers this as Smart Contract and Bridge Risk. Due diligence criteria are defined in C012; overcollateralized lending and regulated stablecoin yield are the lowest-risk options for the immediate bucket.
 
 ### D6 — Validator Concentration Risk
 
 **TM frame:** Correspondent bank concentration is a known ETM8 risk category. Validator concentration is analogous: if a significant share of the network's consensus power is controlled by a small number of entities, the probability distribution of settlement finality changes.
 
 **Treasury impact:** C012 R1 (Protocol Risk) captures this. Channel selection in C008 should account for protocol-level concentration at the network level.
+
+### D7 — Protocol Health Index (antinodeIndex)
+
+**TM frame:** Network infrastructure health is monitored through uptime and latency metrics managed by technology partners. In digital asset treasury, each protocol carries a health state that directly determines whether in-transit positions can settle within their clearing epoch.
+
+**Treasury impact:** The antinodeIndex is a protocol failure counter: it increments on network stall events and decrements on successful confirmations, with a floor of zero. When the antinodeIndex reaches 13, a HARD_HALT is triggered — all deployment on the affected protocol is suspended and all in-transit positions are reclassified to Z=0 pending individual confirmation review. C008 Section 5 defines HARD_HALT trigger and resolution conditions; C012 R1 captures antinodeIndex threshold events as protocol risk findings; C014 requires TMS real-time monitoring to detect threshold approach and respond within the 90-second loop interval.
 
 ---
 
@@ -128,14 +135,14 @@ Each addendum extends a specific ETM8 chapter. This document is the normalizatio
 
 | Addendum | ETM8 Chapter | Delta Concepts Applied |
 |---|---|---|
-| C001 (this document) | Cross-series | D1–D6 defined here |
-| C008 Float Management | Ch. 12 Disbursements | D4 (24/7 clearing), D3 (protocol risk) |
+| C001 (this document) | Cross-series | D1–D7 defined here |
+| C008 Float Management | Ch. 12 Disbursements | D4 (24/7 clearing), D3 (protocol risk), D7 (protocol health index) |
 | C009 Payment Rails | Ch. 4 Payment Systems | D3 (protocol fee eligibility), D5 (smart contract) |
 | C010 Custody Controls | Ch. 3 + Ch. 18 | D2 (key custody), D1 (irreversibility) |
 | C011 Yield Policy | Ch. 13 Short-Term Investing | D5 (smart contract counterparty), D2 (cold custody) |
-| C012 Risk Taxonomy | Ch. 16–17 Risk Management | D1–D6 formally classified |
+| C012 Risk Taxonomy | Ch. 16–17 Risk Management | D1–D7 formally classified |
 | C013 Accounting | Ch. 8 Financial Accounting | D1 (block timestamp as authoritative anchor) |
-| C014 TMS Integration | Ch. 15 Technology | D4 (continuous clearing), API requirements |
+| C014 TMS Integration | Ch. 15 Technology | D4 (continuous clearing), D7 (protocol health monitoring), API requirements |
 
 ---
 

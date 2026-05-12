@@ -108,7 +108,7 @@ The capital stack waterfall assigns all deployable capital (above the Baumol flo
 
 ### 4.1 Immediate Bucket — 30% Allocation, ≤30-Day Instruments
 
-**Purpose**: Liquidity reserve deployable within the same clearing epoch as a Baumol floor breach. Capital in this bucket must be convertible to the hot tier custodial wallet within the instrument's clearing epoch.
+**Purpose**: Liquidity reserve deployable within 24 hours of a Baumol floor breach. Capital in this bucket must be convertible to the hot tier custodial wallet within the instrument's published redemption window, which must not exceed 24 hours.
 
 **Eligible instruments**:
 
