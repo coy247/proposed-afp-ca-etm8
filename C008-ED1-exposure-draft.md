@@ -105,6 +105,35 @@ This distinction parallels C008 §6, under which `canonical_gap_float` of **zero
 state — establishing that, within this series, a zero-valued measure is context-dependent and must not
 be uniformly interpreted as a deficiency.
 
+## 5a. Proposed Amendment 3 — Absent-Input State for a Floor (adds §3.2 clause; general)
+
+**A floor without a defined absent-input state is not a gate.** Where a measured input to a floor test can
+be absent and an implementation supplies a default in its place, that default — not the measurement —
+determines the verdict. Any default at or above the floor renders the gate **unfalsifiable**: the floor can
+never be breached, regardless of the underlying condition, because no real measurement is ever consulted. A
+standard that specifies a floor must therefore also specify the treatment of an absent input; leaving it to
+implementation default is equivalent to leaving the floor undefined. This holds for any implementation of
+C008, independent of how a given system happens to compute or store the measure.
+
+The case is live for **CEC** (§6). The CTP efficiency floor (§3.2, CEC ≥ 0.60) is a floor test, and a
+coverage measure with no observation window has genuinely no value — the same "no surface to measure"
+condition §5 establishes for CECR. The standard must specify which disposition governs an absent CEC input,
+and should select one rather than leave it to the reporting system:
+
+- **(a) Fail closed** — an absent input is treated identically to a floor breach (RED tier / HARD_HALT
+  assessment per §3.2).
+- **(b) Absent ≠ zero, ≠ pass** — an absent input is a third state, reported as **unmeasured**, and is not
+  classified into a tier. **Recommended**, consistent with the CECR treatment in §5: a coverage measure
+  with no observation window has no value rather than a bad one, and classifying it as either pass or fail
+  asserts a measurement that was never taken.
+- **(c) Fail open with disclosure** — a default is permitted, but any tier derived from a defaulted (rather
+  than measured) CEC must be flagged as such in the float register entry, so a defaulted verdict is never
+  indistinguishable from a measured one.
+
+Under the recommended disposition (b), a channel or portfolio whose CEC cannot be computed for a period is
+reported **unmeasured** for that period and excluded from tier-based deployment gating until a measurement
+exists — never silently classified as conformant by a default that sits above the floor.
+
 ## 6. Disposition of the Clearing Epoch Coverage Measure
 
 The time-in-state fraction presently defined as CECR remains operationally useful for measuring
