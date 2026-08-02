@@ -138,8 +138,10 @@ Adoption requires conforming updates where "CECR" is presently referenced as a c
   SOFR** — successor to USD LIBOR, whose panels ceased June 2023 — as a TradFi-canonical, auditable
   reference; (b) a crypto-native short reference rate. If an external index is adopted, specify the
   applied percentage (haircut), consistent with account-analysis practice.
-- **RFC-02 — Disposition of CEC.** Retain the coverage measure under the CEC designation (§6), or
-  retire it.
+- **RFC-02 — Disposition of CEC. RESOLVED (2026-08-02): RETAIN.** The coverage measure is retained under
+  the CEC designation (§6); the §3.2 [0,1] tier ladder + 0.60 floor carry forward to CEC. Basis: the
+  ladder is scaled to a [0,1] coverage measure and is meaningless against a rate, so retiring CEC would
+  orphan it. This unblocks the C011/C014/C012 conforming repoint (§7).
 - **RFC-03 — Reserve analog.** Confirm whether protocol lockup/unbonding periods reduce the investable
   position balance, and how encumbered value is measured.
 - **RFC-04 — ETM8 cross-reference.** Confirm the precise 8th-edition chapter/section for account
